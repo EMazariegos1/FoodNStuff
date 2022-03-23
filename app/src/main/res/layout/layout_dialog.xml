@@ -33,7 +33,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/button"
+        android:layout_above="@id/open_dialog"
         android:layout_below="@+id/editTextDate"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="168dp"
@@ -45,8 +45,8 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_centerInParent="true"
+        android:onClick="setCalender"
         android:text="open date picker" />
 
 </RelativeLayout>

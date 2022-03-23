@@ -19,10 +19,12 @@ import androidx.fragment.app.DialogFragment;
 import java.text.DateFormat;
 import java.util.Calendar;
 
-public class ExampleDialog extends AppCompatDialogFragment implements DatePickerDialog.OnDateSetListener{
+public class ExampleDialog extends AppCompatDialogFragment{
    private EditText editTextUsername;
    private EditText expirationDate;
    private ExampleDialogListener listener;
+   private TextView textView;
+   private Button button;
 
    @Override
    public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -30,7 +32,6 @@ public class ExampleDialog extends AppCompatDialogFragment implements DatePicker
 
       LayoutInflater inflater = getActivity().getLayoutInflater();
       View view = inflater.inflate(R.layout.layout_dialog, null);
-
       builder.setView(view)
               .setTitle("Login")
               .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
@@ -50,28 +51,13 @@ public class ExampleDialog extends AppCompatDialogFragment implements DatePicker
 
       editTextUsername = view.findViewById(R.id.food_name);
       expirationDate = view.findViewById(R.id.editTextDate);
-      Button button = view.findViewById(R.id.button);
-      button.setOnClickListener(new View.OnClickListener() {
-         @Override
-         public void onClick(View v) {
-            DialogFragment datePicker = new DatePickerFragment();
-            datePicker.show(getSupportFragmentManager(), "date picker");
-         }
-      });
-
+      textView = view.findViewById(R.id.textView);
       return builder.create();
    }
 
-   @Override
-   public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-      Calendar c = Calendar.getInstance();
-      c.set(Calendar.YEAR, year);
-      c.set(Calendar.MONTH, month);
-      c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-      String currentDateString = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
+   public void setText(String text){
 
-      TextView textView = view.findViewById(R.id.textView);
-      textView.setText(currentDateString);
+      textView.setText(text);
    }
 
    @Override
