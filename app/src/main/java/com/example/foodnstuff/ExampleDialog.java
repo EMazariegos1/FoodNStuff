@@ -26,6 +26,9 @@ public class ExampleDialog extends AppCompatDialogFragment{
    private TextView textView;
    private Button button;
 
+   public ExampleDialog() {
+   }
+
    @Override
    public Dialog onCreateDialog(Bundle savedInstanceState) {
       AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -33,7 +36,7 @@ public class ExampleDialog extends AppCompatDialogFragment{
       LayoutInflater inflater = getActivity().getLayoutInflater();
       View view = inflater.inflate(R.layout.layout_dialog, null);
       builder.setView(view)
-              .setTitle("Login")
+              .setTitle("New Item")
               .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
                  @Override
                  public void onClick(DialogInterface dialogInterface, int i) {

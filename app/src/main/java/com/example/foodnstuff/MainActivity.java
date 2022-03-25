@@ -17,18 +17,17 @@ import java.text.DateFormat;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity implements ExampleDialog.ExampleDialogListener, DatePickerDialog.OnDateSetListener {
-    private ExampleDialog exampleDialog;
     private TextView textViewUsername;
-    private TextView textViewPassword;
-    private Button opdialog, button;
+    private TextView textViewPassword, textD;
+    private Button opdialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         textViewUsername = (TextView) findViewById(R.id.textview_username);
         textViewPassword = (TextView) findViewById(R.id.textview_password);
+        textD = findViewById(R.id.textViewDate);
         opdialog = (Button) findViewById(R.id.open_dialog);
         opdialog.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,8 +35,8 @@ public class MainActivity extends AppCompatActivity implements ExampleDialog.Exa
                 openDialog();
             }
         });
-
     }
+
     public void setCalender(View view){
         DialogFragment datePicker = new DatePickerFragment();
         datePicker.show(getSupportFragmentManager(), "date picker");
@@ -50,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements ExampleDialog.Exa
         c.set(Calendar.MONTH, month);
         c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
         String currentDateString = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
-        exampleDialog.setText(currentDateString);
+        textD.setText(currentDateString);
     }
 
     public void openDialog() {
