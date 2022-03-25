@@ -16,6 +16,7 @@ import java.util.List;
 public class FoodListAdaptor extends RecyclerView.Adapter<FoodListAdaptor.ViewHolder> {
     List<String> names;
     List<Integer> images;
+    List<Food> foods;
     Context context;
     LayoutInflater inflater;
 
