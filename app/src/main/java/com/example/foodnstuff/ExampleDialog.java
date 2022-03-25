@@ -19,7 +19,7 @@ import androidx.fragment.app.DialogFragment;
 import java.text.DateFormat;
 import java.util.Calendar;
 
-public class ExampleDialog extends AppCompatDialogFragment{
+public class ExampleDialog extends AppCompatDialogFragment implements ExampleDialog.ExampleDialogListener{
    private EditText editTextUsername;
    private EditText expirationDate;
    private ExampleDialogListener listener;
@@ -73,6 +73,11 @@ public class ExampleDialog extends AppCompatDialogFragment{
          throw new ClassCastException(context.toString() +
                  "must implement ExampleDialogListener");
       }
+   }
+//TODO Figured it out, use a listener in mainactivity to send data right here and set it to the text for date. WEEWOOOO.
+   @Override
+   public void applyTexts(String username, String date) {
+
    }
 
    public interface ExampleDialogListener {
