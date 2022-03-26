@@ -61,6 +61,7 @@ public class FoodListAdaptor extends RecyclerView.Adapter<FoodListAdaptor.ViewHo
                 @Override
                 public void onClick(View view) {
                     //TODO make clicking the cardview open the edit popup
+                    //todo video that shows how to search items https://youtu.be/sJ-Z9G0SDhc
                     Toast.makeText(view.getContext(), "Button number "+ getAdapterPosition() + " was clicked", Toast.LENGTH_SHORT).show();
                 }
             });
