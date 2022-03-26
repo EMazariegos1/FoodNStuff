@@ -6,7 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -47,13 +49,21 @@ public class FoodListAdaptor extends RecyclerView.Adapter<FoodListAdaptor.ViewHo
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        ImageButton foodImage;
+        ImageView foodImage;
         TextView foodName;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             foodImage = itemView.findViewById(R.id.food_image);
             foodName = itemView.findViewById(R.id.food_name);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //TODO make clicking the cardview open the edit popup
+                    Toast.makeText(view.getContext(), "Button number "+ getAdapterPosition() + " was clicked", Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     }
 }
