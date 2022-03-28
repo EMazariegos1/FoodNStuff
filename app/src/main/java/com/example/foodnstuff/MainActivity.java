@@ -18,6 +18,7 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity implements ExampleDialog.ExampleDialogListener, DatePickerDialog.OnDateSetListener {
     private TextView textViewUsername;
+    private ExampleDialogListener listener;
     private TextView textViewPassword, textD;
     private Button opdialog;
 
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements ExampleDialog.Exa
         c.set(Calendar.MONTH, month);
         c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
         String currentDateString = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
-        textD.setText(currentDateString);
+        listener.applyTexts2(currentDateString);
     }
 
     public void openDialog() {
@@ -57,7 +58,21 @@ public class MainActivity extends AppCompatActivity implements ExampleDialog.Exa
         exampleDialog.show(getSupportFragmentManager(), "example dialog");
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
 
+        try {
+            listener = (ExampleDialogListener) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString() +
+                    "must implement ExampleDialogListener");
+        }
+    }
+
+    public interface ExampleDialogListener {
+        void applyTexts2(String calenderDate);
+    }
 
     @Override
     public void applyTexts(String username, String password) {

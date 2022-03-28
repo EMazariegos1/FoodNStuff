@@ -58,11 +58,6 @@ public class ExampleDialog extends AppCompatDialogFragment implements ExampleDia
       return builder.create();
    }
 
-   public void setText(String text){
-
-      textView.setText(text);
-   }
-
    @Override
    public void onAttach(Context context) {
       super.onAttach(context);
@@ -76,8 +71,8 @@ public class ExampleDialog extends AppCompatDialogFragment implements ExampleDia
    }
 //TODO Figured it out, use a listener in mainactivity to send data right here and set it to the text for date. WEEWOOOO.
    @Override
-   public void applyTexts(String username, String date) {
-
+   public void applyTexts2(String calenderDate) {
+      textView.setText(calenderDate);
    }
 
    public interface ExampleDialogListener {
