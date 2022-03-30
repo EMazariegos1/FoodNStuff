@@ -17,41 +17,15 @@ import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.zip.Inflater;
 
-public class MainActivity extends AppCompatActivity implements ExampleDialog.ExampleDialogListener {
-    private TextView textViewUsername;
-    private TextView textViewPassword;
-    private Button opdialog;
+public class MainActivity extends AppCompatActivity {
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        textViewUsername = findViewById(R.id.textview_username);
-        textViewPassword = findViewById(R.id.textview_password);
 
-        LayoutInflater inflater = this.getLayoutInflater();
-
-
-        opdialog = findViewById(R.id.open_dialog);
-        opdialog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openDialog();
-            }
-        });
     }
 
-
-    public void openDialog() {
-        ExampleDialog exampleDialog = new ExampleDialog();
-        exampleDialog.show(getSupportFragmentManager(), "example dialog");
-    }
-
-
-    @Override
-    public void applyTexts2(String username, String password) {
-        textViewUsername.setText(username);
-        textViewPassword.setText(password);
-    }
 }
