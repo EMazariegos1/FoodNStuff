@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:id="@+id/relativelayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/food_name"
+        style="@android:style/Widget.Material.EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="70dp"
+        android:hint="Item Name" />
+
+    <TextView
+        android:id="@+id/expirationTV"
+        android:layout_width="123dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/food_name"
+        android:layout_alignStart="@+id/food_name"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="13dp"
+        android:text="Expiration Date" />
+
+    <EditText
+        android:id="@+id/ex_year"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/food_name"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="1dp"
+        android:layout_toEndOf="@+id/expirationTV"
+        android:ems="10"
+        android:hint="month"
+        android:inputType="date" />
+
+    <EditText
+        android:id="@+id/ex_month"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/food_name"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/ex_year"
+        android:ems="10"
+        android:inputType="date" />
+
+    <EditText
+        android:id="@+id/ex_day"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/food_name"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="69dp"
+        android:layout_toEndOf="@+id/ex_month"
+        android:ems="10"
+        android:inputType="date" />
+
+    <Spinner
+        android:id="@+id/categories_spinner"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ex_year"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="87dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="84dp"
+        android:minHeight="48dp" />
+
+    <Switch
+        android:id="@+id/ex_notification_switch"
+        android:layout_width="147dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/categories_spinner"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="79dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="185dp"
+        android:text="Notifications" />
+
+    <Switch
+        android:id="@+id/buy_notification_switch"
+        android:layout_width="158dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ex_notification_switch"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="9dp"
+        android:text="Buy Reminder" />
+
+    <TextView
+        android:id="@+id/buy_moreTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ex_notification_switch"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="14dp"
+        android:layout_toEndOf="@+id/buy_notification_switch"
+        android:text="TextView" />
+
+    <EditText
+        android:id="@+id/buy_more_days"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ex_notification_switch"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="-4dp"
+        android:layout_marginEnd="33dp"
+        android:layout_toEndOf="@+id/buy_moreTV"
+        android:ems="10"
+        android:hint="Days"
+        android:inputType="date" />
+
+</RelativeLayout>
