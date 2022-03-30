@@ -16,37 +16,68 @@
         android:layout_marginEnd="70dp"
         android:hint="Item Name" />
 
-    <EditText
-        android:id="@+id/editTextDate"
-        android:layout_width="match_parent"
+    <Spinner
+        android:id="@+id/year_spinner"
+        android:layout_width="94dp"
+        android:layout_height="37dp"
+        android:layout_below="@+id/ex_dateTV"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="11dp" />
+
+    <Spinner
+        android:id="@+id/month_spinner"
+        android:layout_width="71dp"
+        android:layout_height="37dp"
+        android:layout_below="@+id/ex_dateTV"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="14dp"
+        android:layout_toEndOf="@+id/year_spinner" />
+
+    <Spinner
+        android:id="@+id/day_spinner"
+        android:layout_width="73dp"
+        android:layout_height="38dp"
+        android:layout_below="@+id/ex_dateTV"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="59dp"
+        android:layout_toEndOf="@+id/month_spinner" />
+
+    <Spinner
+        android:id="@+id/category_spinner"
+        android:layout_width="291dp"
+        android:layout_height="55dp"
+        android:layout_below="@+id/month_spinner"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="56dp" />
+
+    <Switch
+        android:id="@+id/notification_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:layout_below="@+id/category_spinner"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="121dp"
+        android:layout_marginTop="135dp"
+        android:layout_marginEnd="111dp"
+        android:text="Switch" />
+
+    <TextView
+        android:id="@+id/ex_dateTV"
+        android:layout_width="207dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/food_name"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="70dp"
-        android:layout_marginEnd="70dp"
-        android:ems="10"
-        android:hint="Expiration Date"
-        android:inputType="date" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/open_dialog"
-        android:layout_below="@+id/editTextDate"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="168dp"
-        android:layout_marginBottom="28dp"
-        android:text="date"
-        android:textSize="30sp" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:onClick="setCalender"
-        android:text="open date picker" />
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="133dp"
+        android:text="Enter Expiration Date" />
 
 </RelativeLayout>
