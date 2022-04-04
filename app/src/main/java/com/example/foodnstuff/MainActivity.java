@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         images.add(R.drawable.chicken);
         images.add(R.drawable.chicken);
         images.add(R.drawable.chicken);
-//code for recyclerview
+//code for recyclerview and see if this works
         adaptor = new FoodListAdaptor(this, names, images);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL,false);
         foodList.setLayoutManager(gridLayoutManager);
