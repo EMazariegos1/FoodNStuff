@@ -1,27 +1,11 @@
 package com.example.foodnstuff;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Context;
-import android.os.Bundle;
-import android.view.LayoutInflater;
-
-import java.util.ArrayList;
-import java.util.List;
-
-public class MainActivity extends AppCompatActivity {
-    RecyclerView foodList;
-    List<String> names;
-    List<Integer> images;
-    FoodListAdaptor adaptor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        foodList = findViewById(R.id.food_list);
 
         names = new ArrayList<>();
         images = new ArrayList<>();
@@ -34,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
         names.add("four");
         names.add("four");
         names.add("four");
-
         images.add(R.drawable.chicken);
         images.add(R.drawable.chicken);
         images.add(R.drawable.chicken);
@@ -49,4 +32,5 @@ public class MainActivity extends AppCompatActivity {
         foodList.setLayoutManager(gridLayoutManager);
         foodList.setAdapter(adaptor);
     }
+
 }
