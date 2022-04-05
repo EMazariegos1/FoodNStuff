@@ -12,7 +12,7 @@ public class Food {
         this.image = image;
         this.notification = notification;
     }
-//test
+
     public String getName() {
         return name;
     }

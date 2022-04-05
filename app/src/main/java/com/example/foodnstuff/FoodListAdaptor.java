@@ -21,7 +21,7 @@ public class FoodListAdaptor extends RecyclerView.Adapter<FoodListAdaptor.ViewHo
     List<Food> foods;
     Context context;
     LayoutInflater inflater;
-//test
+
     public FoodListAdaptor(Context c, List<String> name, List<Integer> image){
         context = c;
         names = name;
